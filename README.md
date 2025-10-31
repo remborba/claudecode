@@ -2,6 +2,13 @@
 
 Servidor MCP (Model Context Protocol) para integração com a API do GoHighLevel, permitindo consultar informações da sua conta GHL através do Claude.
 
+## 🎯 Modos de Operação
+
+Este servidor oferece **duas formas de uso**:
+
+1. **Modo Stdio** - Para Claude Desktop (comunicação local via stdin/stdout)
+2. **Modo HTTP REST API** - Para Claude Web e integrações (servidor web na porta 3000)
+
 ## Funcionalidades
 
 Este servidor MCP oferece as seguintes ferramentas:
@@ -61,9 +68,11 @@ GHL_LOCATION_ID=seu_location_id_aqui
 npm run build
 ```
 
-## Uso Local
+## Uso
 
-### Com Claude Desktop
+### 📱 Modo 1: Claude Desktop (Stdio)
+
+**Para usar localmente com Claude Desktop:**
 
 Adicione ao arquivo de configuração do Claude Desktop (`claude_desktop_config.json`):
 
@@ -94,6 +103,33 @@ Você pode testar o servidor diretamente:
 ```bash
 npm run dev
 ```
+
+---
+
+### 🌐 Modo 2: HTTP REST API (Para Web)
+
+**Para usar com Claude Web ou chamadas HTTP diretas:**
+
+Inicie o servidor HTTP:
+
+```bash
+npm start
+# Servidor rodará em http://localhost:3000
+```
+
+**Endpoints disponíveis:**
+- `GET /` - Health check e informações do servidor
+- `GET /tools` - Lista todas as ferramentas disponíveis
+- `GET /account` - Informações da conta GHL
+- `GET /contacts` - Lista contatos
+- `GET /contacts/:id` - Detalhes de um contato
+- `GET /pipelines` - Lista pipelines
+- `GET /opportunities` - Lista oportunidades
+- `GET /appointments` - Lista compromissos
+
+📖 **Documentação completa da API:** Veja `HTTP_API.md`
+
+---
 
 ## Uso no Claude Web
 

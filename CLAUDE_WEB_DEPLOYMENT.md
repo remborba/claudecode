@@ -20,13 +20,19 @@ Para usar este servidor MCP no Claude Web, você precisa hospedá-lo como um ser
 2. Adicione as variáveis:
    - `GHL_API_KEY` = `pit-b98a827a-d155-49b8-a5b1-f63a77ab9891`
    - `GHL_LOCATION_ID` = `WpYVPwntuG1zBWk68WC8`
-3. Clique em "Deploy" (o Railway fará o deploy automaticamente)
+3. Aguarde o deploy automático completar
 
-### Passo 4: Obter a URL
-1. Vá em "Settings" do seu serviço
-2. Em "Networking", clique em "Generate Domain"
-3. Railway gerará uma URL como: `https://seu-projeto.up.railway.app`
-4. Copie esta URL!
+### Passo 4: Configurar a Porta e Obter a URL
+1. Clique no seu serviço (o card do projeto)
+2. Vá em "Settings" (⚙️)
+3. Em "Networking" ou "Public Networking", clique em **"Generate Domain"**
+4. **Quando perguntar sobre a porta**, digite: **3000**
+   - O servidor está configurado para usar a porta 3000 por padrão
+   - Railway automaticamente define a variável PORT
+5. Railway gerará uma URL como: `https://seu-projeto.up.railway.app`
+6. Copie esta URL!
+
+**Importante**: Se o Railway não perguntar sobre a porta, não se preocupe. O servidor já está configurado para usar a porta que o Railway fornecer automaticamente através da variável de ambiente `PORT`.
 
 ### Passo 5: Configurar no Claude Web
 1. Acesse https://claude.ai
